@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switch</title>
+</head>
+<body>
+
+<p th:text="'Switch name: ' + ${switch1.getName()}"></p>
+<p th:text="'Switch ID: ' + ${switch1.getId()}"></p>
+
+<a th:href="@{/switches/{id}/edit(id=${switch1.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/switches/{id}(id=${switch1.getId()})}">
+  <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

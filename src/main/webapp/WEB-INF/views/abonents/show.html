@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abonent</title>
+</head>
+<body>
+
+<p th:text="'Name: ' + ${abonent.getName()}"></p>
+<p th:text="'Phone Number: ' + ${abonent.getPhone()}"></p>
+<p th:text="'address_id: ' + ${abonent.getAddress_id()}"></p>
+<p th:text="'switch_id: ' + ${abonent.getSwitch_id()}"></p>
+
+<a th:href="@{/abonents/{id}/edit(id=${abonent.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/abonents/{id}(id=${abonent.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

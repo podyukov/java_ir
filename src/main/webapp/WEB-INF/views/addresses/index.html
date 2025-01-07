@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All addresses</title>
+</head>
+<body>
+
+<p>All switches:</p>
+<div th:each="address : ${addresses}">
+    <a th:href="@{/addresses/{id}(id=${address.getId()})}" th:text="${address.getId()} + ': ' + ${address.getCity_name()}"></a>
+</div>
+
+<br/>
+
+<hr/>
+<a href="/addresses/new">Create new address</a>
+<br/>
+<a href="/">Go to the main menu</a>
+
+</body>
+</html>

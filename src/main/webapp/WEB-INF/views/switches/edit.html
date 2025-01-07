@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Switch</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/switches/{id}(id=${switch1.getId()})}" th:object="${switch1}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name">
+
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+    <br/>
+    <input type="submit" value="Update!">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All service areas</title>
+</head>
+<body>
+
+<p>All service areas (switchID -> addressID):</p>
+<div th:each="zone : ${zones}">
+    <a th:href="@{/zones/{id}(id=${zone.getId()})}" th:text="${zone.getSwitch_id()} + ' -> ' + ${zone.getAddress_id()}"></a>
+</div>
+
+<br/>
+
+<hr/>
+<a href="/zones/new">Create new zone</a>
+<br/>
+<a href="/">Go to the main menu</a>
+
+</body>
+</html>

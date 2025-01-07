@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Zone</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/zones/{id}(id=${zone.getId()})}" th:object="${zone}">
+
+  <label for="switch_id">Enter switch id: </label>
+  <input type="text" th:field="*{switch_id}" id="switch_id">
+  <div style="color:red" th:if="${#fields.hasErrors('switch_id')}" th:errors="*{switch_id}"></div>
+  <br/>
+
+  <label for="address_id">Enter address id: </label>
+  <input type="text" th:field="*{address_id}" id="address_id">
+  <div style="color:red" th:if="${#fields.hasErrors('address_id')}" th:errors="*{address_id}"></div>
+  <br/>
+
+  <input type="submit" value="Update!">
+</form>
+
+<div th:if="${error}">
+  <p style="color:red">Error to save! Maybe, switch or address wasn't found in the database!</p>
+</div>
+
+</body>
+</html>

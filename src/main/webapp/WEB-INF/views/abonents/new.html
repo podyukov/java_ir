@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Abonent</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/abonents}" th:object="${abonent}">
+
+    <label for="name">Name: </label>
+    <input type="text" th:field="*{name}" id="name">
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <br/>
+
+    <label for="phone">Enter phone: </label>
+    <input type="text" th:field="*{phone}" id="phone">
+    <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+    <br/>
+
+    <label for="address_id">Enter address id: </label>
+    <input type="text" th:field="*{address_id}" id="address_id">
+    <div style="color:red" th:if="${#fields.hasErrors('address_id')}" th:errors="*{address_id}"></div>
+    <br/>
+
+    <label for="switch_id">Enter switch id: </label>
+    <input type="text" th:field="*{switch_id}" id="switch_id">
+    <div style="color:red" th:if="${#fields.hasErrors('switch_id')}" th:errors="*{switch_id}"></div>
+    <br/>
+
+    <input type="submit" value="Create!">
+</form>
+
+<div th:if="${error}">
+    <p style="color:red">Error to save! Maybe, client's address isn't serve. Check service areas for your client!</p>
+</div>
+
+</body>
+</html>

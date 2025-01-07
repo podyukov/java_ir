@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All abonents</title>
+</head>
+<body>
+
+<p>All abonents:</p>
+<div th:each="abonent : ${abonents}">
+    <a th:href="@{/abonents/{id}(id=${abonent.getId()})}" th:text="${abonent.getId()} + ': ' + ${abonent.getName()}"></a>
+</div>
+
+<br/>
+
+<hr/>
+<a href="/abonents/new">Create new abonent</a>
+<br/>
+<a href="/">Go to the main menu</a>
+
+</body>
+</html>

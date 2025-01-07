@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All switches</title>
+</head>
+<body>
+
+<p>All switches:</p>
+<div th:each="switch1 : ${switches}">
+  <a th:href="@{/switches/{id}(id=${switch1.getId()})}" th:text="${switch1.getId()} + ': ' + ${switch1.getName()}"></a>
+</div>
+
+<br/>
+
+<hr/>
+<a href="/switches/new">Create new switch</a>
+<br/>
+<a href="/">Go to the main menu</a>
+
+</body>
+</html>

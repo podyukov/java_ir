@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zone</title>
+</head>
+<body>
+
+<p th:text="'Switch ID: ' + ${zone.getSwitch_id()}"></p>
+<p th:text="'Address ID: ' + ${zone.getAddress_id()}"></p>
+
+<a th:href="@{/zones/{id}/edit(id=${zone.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/zones/{id}(id=${zone.getId()})}">
+  <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

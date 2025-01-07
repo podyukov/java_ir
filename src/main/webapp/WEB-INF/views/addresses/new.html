@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Address</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/addresses}" th:object="${address}">
+
+  <label for="city_name">Enter city name: </label>
+  <input type="text" th:field="*{city_name}" id="city_name">
+  <div style="color:red" th:if="${#fields.hasErrors('city_name')}" th:errors="*{city_name}"></div>
+  <br/>
+
+  <label for="street_name">Enter street name: </label>
+  <input type="text" th:field="*{street_name}" id="street_name">
+  <div style="color:red" th:if="${#fields.hasErrors('street_name')}" th:errors="*{street_name}"></div>
+  <br/>
+
+  <label for="house_number">Enter house number: </label>
+  <input type="text" th:field="*{house_number}" id="house_number">
+  <div style="color:red" th:if="${#fields.hasErrors('house_number')}" th:errors="*{house_number}"></div>
+  <br/>
+
+  <label for="flat_number">Enter flat number: </label>
+  <input type="text" th:field="*{flat_number}" id="flat_number">
+  <div style="color:red" th:if="${#fields.hasErrors('flat_number')}" th:errors="*{flat_number}"></div>
+  <br/>
+
+  <input type="submit" value="Create!">
+</form>
+
+</body>
+</html>
